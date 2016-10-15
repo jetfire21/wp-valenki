@@ -49,7 +49,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		 wp_nav_menu( $args );
 
 	?>
-
+	<div class="hor-line"></div>
 	<?php
 		/**
 		 * woocommerce_sidebar hook.

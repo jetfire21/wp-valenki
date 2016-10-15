@@ -1,6 +1,8 @@
 body 
 	// height: 500px
 	background: #4696CD
+	// font-family: Tahoma, Verdana, sans-serif
+	font-family: 'Neucha', cursive
 
 a,a:hover,p,header
 	color: #fff
@@ -10,12 +12,34 @@ ul,ol,li
 	list-style: none
 
 h3
-	font: 20px Tahoma
+	font-size: 20pх
 	line-height: 21px
 
+$separator: 1px dotted #adf
+
+.separator
+	border-bottom: $separator
+	clear: both
+
 header 
-	padding: 30px 0
+	padding: 30px 0 0 0
 	overflow: hidden
+	margin-bottom: 15px
+
+	.separator
+		margin: 0 30px 0 15px
+		padding-bottom: 15px
+
+	h1
+		font-family: 'Ruslan Display', cursive
+		margin-bottom: 0
+
+	.h-right
+		padding-left: 40px
+
+.woocommerce-result-count
+	font-size: 20px
+	padding-left: 15px
 
 .alex-content 
 	
@@ -48,9 +72,13 @@ header
 
 .left-sidebar
 	> ul 
-		border-bottom: 1px solid #fff
+		border-bottom: $separator
+		// border-bottom: 1px dotted #fff
 		padding-bottom: 30px
 		margin-bottom: 30px
+
+	li 
+		padding-bottom: 6px
 
 
 
@@ -58,3 +86,9 @@ header
 	background: #266d9e
 	padding: 7px 0
 	margin-top: 10px
+
+footer
+	padding: 20px 0 30px 0
+
+	.separator 
+		margin-bottom: 20px

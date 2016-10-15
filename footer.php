@@ -1,3 +1,11 @@
+<div class="container">
+
+	<footer>
+		<div class="separator"></div>
+		<p>2016 © Валенки ручной работы | Чувашская республика, г.Новочебоксарск, ул.Восточная д.24</p>
+	</footer>
+</div>
+
  <?php wp_footer(); ?>
 
 <!--<script src="<?php echo get_template_directory_uri();?>/libs/jquery/jquery1.11.0.min.js"></script>--> 

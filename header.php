@@ -10,9 +10,12 @@
 	<link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 	
+	<link href="https://fonts.googleapis.com/css?family=Ruslan+Display" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Neucha" rel="stylesheet">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/css/fonts.css" />
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/libs/bootstrap/css/bootstrap.min.css" />
 	<!-- <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/css/main.css" /> -->
+
 	<?php wp_head(); ?>
 
 </head>
@@ -21,9 +24,11 @@
 <div class="container">
 <header>
 	<div class="col-md-2"><img class="img-responsive" src="<?php echo get_template_directory_uri();?>/img/logo_val.png" alt=""></div>
-	<div class="col-md-10">
+	<div class="col-md-10 h-right">
 		<h1>Валенки ручной работы</h1>
 		<p>интернет-магазин</p>
 	</div>
+	<div class="separator"></div>
 </header>
+
 </div>

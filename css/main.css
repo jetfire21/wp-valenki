@@ -1,5 +1,7 @@
+@charset "UTF-8";
 body {
   background: #4696CD;
+  font-family: "Neucha", cursive;
 }
 
 a, a:hover, p, header {
@@ -12,13 +14,35 @@ ul, ol, li {
 }
 
 h3 {
-  font: 20px Tahoma;
+  font-size: 20p╤Е;
   line-height: 21px;
 }
 
+.separator {
+  border-bottom: 1px dotted #adf;
+  clear: both;
+}
+
 header {
-  padding: 30px 0;
+  padding: 30px 0 0 0;
   overflow: hidden;
+  margin-bottom: 15px;
+}
+header .separator {
+  margin: 0 30px 0 15px;
+  padding-bottom: 15px;
+}
+header h1 {
+  font-family: "Ruslan Display", cursive;
+  margin-bottom: 0;
+}
+header .h-right {
+  padding-left: 40px;
+}
+
+.woocommerce-result-count {
+  font-size: 20px;
+  padding-left: 15px;
 }
 
 .alex-content .products li {
@@ -47,15 +71,25 @@ header {
 }
 
 .left-sidebar > ul {
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px dotted #adf;
   padding-bottom: 30px;
   margin-bottom: 30px;
+}
+.left-sidebar li {
+  padding-bottom: 6px;
 }
 
 .add_to_cart_button {
   background: #266d9e;
   padding: 7px 0;
   margin-top: 10px;
+}
+
+footer {
+  padding: 20px 0 30px 0;
+}
+footer .separator {
+  margin-bottom: 20px;
 }
 
 /*# sourceMappingURL=main.css.map */
