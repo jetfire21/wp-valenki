@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 ?>
-
+<!-- <h1>single product</h1> -->
 <?php
 	/**
 	 * woocommerce_before_single_product hook.
@@ -37,7 +37,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <div itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
-
+	 <div class="col-md-7 reset_pad_l">
 	<?php
 		/**
 		 * woocommerce_before_single_product_summary hook.
@@ -47,8 +47,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 		 */
 		do_action( 'woocommerce_before_single_product_summary' );
 	?>
-
-	<div class="summary entry-summary">
+	</div>
+	<div class="col-md-5 reset_pad_r summary entry-summary">
 
 		<?php
 			/**
@@ -66,6 +66,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		?>
 
 	</div><!-- .summary -->
+	<div class="clearfix"></div>
 
 	<?php
 		/**

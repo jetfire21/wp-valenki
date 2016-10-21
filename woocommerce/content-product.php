@@ -26,6 +26,7 @@ global $product;
 if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
+
 ?>
 
 	<?php  //echo "=".$i; print_r($product);?>
@@ -75,7 +76,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 		do_action( 'woocommerce_after_shop_loop_item' );
 		?>
 	</li>
-	<?php if( $i%4 == 0):?>
+	<?php if( $i%4 == 0 && !is_product() ):?>
 		<div class="clearfix"></div>
 	<?php endif;?>
 

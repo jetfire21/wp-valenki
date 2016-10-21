@@ -25,42 +25,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <div class="container">
 
-	<div class="col-md-2 left-sidebar">
+	<?php  wc_get_template_part( 'left', 'sidebar' ); ?>
 
-		<?php
-		$args = array(
-		  'theme_location'  => 'left_sidebar',
-		  'menu'            => 'left-vert-menu', 
-		  'container'       => '', 
-		  'container_class' => '', 
-		  'container_id'    => '',
-		  'menu_class'      => '', 
-		  'menu_id'         => '',
-		  'echo'            => true,
-		  'fallback_cb'     => 'wp_page_menu',
-		  'before'          => '',
-		  'after'           => '',
-		  'link_before'     => '',
-		  'link_after'      => '',
-		  'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-		  'depth'           => 0
-		);
-
-		 wp_nav_menu( $args );
-
-	?>
-	<div class="hor-line"></div>
-	<?php
-		/**
-		 * woocommerce_sidebar hook.
-		 *
-		 * @hooked woocommerce_get_sidebar - 10
-		 */
-		do_action( 'woocommerce_sidebar' );
-	?>
-	</div>
-	
 	<div class="col-md-10 alex-content">
+
+	
+
+	<div id="owl-home-slider" class="owl-carousel owl-theme">
+	 
+	  <div class="item"><img src="<?php echo get_template_directory_uri();?>/img/slide_1.jpg" alt=""></div>
+	  <div class="item"><img src="<?php echo get_template_directory_uri();?>/img/slide_2.jpg" alt=""></div>
+	  <div class="item"><img src="<?php echo get_template_directory_uri();?>/img/slide_3.jpg" alt=""></div>
+	 
+	</div>
+
 	<?php
 		/**
 		 * woocommerce_before_main_content hook.
@@ -136,10 +114,45 @@ if ( ! defined( 'ABSPATH' ) ) {
 		 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
 		 */
 		do_action( 'woocommerce_after_main_content' );
-	?>
-	</div>
-	<!-- end .alex-content -->
 
-</div>
-<!-- end .container -->
+
+
+		$params = array(  'pagename' => 'o-nas');
+		$page_o_nas = new WP_Query($params);
+		?>
+		<?php if ($page_o_nas->have_posts()) : ?>
+		<?php while ($page_o_nas->have_posts()) : $page_o_nas->the_post(); ?>
+			<h2><?php the_title(); ?></h2>
+			<?php the_content(); ?>
+		<?php endwhile; ?>
+			<?php wp_reset_postdata(); ?>
+		<?php else:  ?>
+			<p> no content</p>
+		<?php endif; ?>
+
+		<!--  обзор комментариев -->
+<!-- 		
+		<div id="vk_comments_browse"></div>
+		<script type="text/javascript">
+			window.onload = function () {
+			VK.init({apiId: 5678013, onlyWidgets: true});
+			VK.Widgets.CommentsBrowse('vk_comments_browse', {width: 300, limit: 5, mini: 0});
+			}
+		</script>
+ -->
+		<!-- Добавление комментариев -->
+		<script type="text/javascript">
+		  VK.init({apiId: 5678013, onlyWidgets: true});
+		</script>
+
+		<!-- Put this div tag to the place, where the Comments block will be -->
+		<div id="vk_comments"></div>
+		<script type="text/javascript">
+		VK.Widgets.Comments("vk_comments", {limit: 10, width: "300", attach: false});
+		</script>
+	
+
+	</div><!-- end .alex-content -->
+
+</div><!-- end .container -->
 <?php get_footer( 'shop' ); ?>

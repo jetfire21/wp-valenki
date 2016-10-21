@@ -80,9 +80,14 @@ add_filter( 'woocommerce_enqueue_styles', '__return_false' );
 
 function wp_enqueue_woocommerce_style(){
   wp_register_style( 'mytheme-woocommerce', get_template_directory_uri() . '/css/main.css' );
+    wp_enqueue_style('owl-car', get_template_directory_uri()."/libs/owl-carousel/owl.carousel.css");
+    wp_enqueue_style('owl-theme', get_template_directory_uri()."/libs/owl-carousel/owl.theme.css");
+
 
   wp_deregister_script( 'jquery' );
    wp_enqueue_script('jquery', get_template_directory_uri()."/libs/jquery/jquery1.11.0.min.js",'','',true);
+   wp_enqueue_script('owl-carousel', get_template_directory_uri()."/libs/owl-carousel/owl.carousel.min.js",'','',true);
+   wp_enqueue_script('common', get_template_directory_uri()."/js/common.js",'','',true);
 
   
   if ( class_exists( 'woocommerce' ) ) {

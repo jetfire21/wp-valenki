@@ -3,17 +3,37 @@ body
 	background: #4696CD
 	// font-family: Tahoma, Verdana, sans-serif
 	font-family: 'Neucha', cursive
-
-a,a:hover,p,header
 	color: #fff
+
+a,a:hover,a:visited,a:visited, a:focus, p,header
+	color: #fff
+	text-decoration: none
+
+a:hover
+	text-decoration: underline
 	
 ul,ol,li
 	padding-left: 0
 	list-style: none
 
 h3
-	font-size: 20pх
+	font-size: 20px
 	line-height: 21px
+
+input 
+	color: #000
+
+.reset_pad_lr
+	padding-left: 0
+	padding-right: 0
+
+.reset_pad_l
+	padding-left: 0
+
+.reset_pad_r
+	padding-right: 0
+
+
 
 $separator: 1px dotted #adf
 
@@ -31,11 +51,25 @@ header
 		padding-bottom: 15px
 
 	h1
-		font-family: 'Ruslan Display', cursive
+		// font-family: 'Ruslan Display', cursive
+		font-family: "RuslanDisplayRegular"
 		margin-bottom: 0
 
 	.h-right
 		padding-left: 40px
+
+	.phone-callback
+		padding-top: 22px
+		text-align: right
+
+		span
+			font-size: 20px
+			font-weight: bold
+			display: block
+
+		a 
+			margin: 8px 0 0 auto
+
 
 .woocommerce-result-count
 	font-size: 20px
@@ -44,6 +78,7 @@ header
 .alex-content 
 	
 	.products
+		margin: 0 -15px
 
 		li 
 			margin-bottom: 40px
@@ -58,7 +93,7 @@ header
 			height: 133px
 			width: auto
 
-		ins 	
+		ins	
 			text-decoration: none 
 			font-weight: bold
 
@@ -68,6 +103,29 @@ header
 
 			del 
 				padding-right: 10px
+
+	#owl-home-slider
+		max-width: 710px
+		margin-bottom: 30px
+
+	.owl-theme .owl-controls
+		margin-top: -40px 
+		text-align: right
+		padding-right: 40px
+
+	.owl-theme .owl-controls .owl-page span
+		background: #fff
+		opacity: 0.9
+
+	.owl-page.active span 
+		opacity: 0.9
+		background: #0670b9 !important
+
+	.owl-theme .owl-controls.clickable .owl-page:hover span
+		opacity: 0.5
+
+	.owl-buttons
+		display: none
 
 
 .left-sidebar
@@ -82,13 +140,125 @@ header
 
 
 
-.add_to_cart_button
+// .add_to_cart_button, .single_add_to_cart_button
+.button
 	background: #266d9e
-	padding: 7px 0
+	padding: 7px 20px
 	margin-top: 10px
+	display: table
+	border: 0
+	text-decoration: none !important
+	color: #fff
+
+	&:hover 
+		text-decoration: none
+		background: #ed7f30
+
+
+/* ********** single product ************ */
+
+.woocommerce-breadcrumb
+	padding-bottom: 20px
+
+.single_product
+	
+	.single_add_to_cart_button
+		display: inline
+
+	.thumbnails
+		margin: 15px 0 20px 0
+
+		a 
+			display: inline-block
+			max-width: 90px
+			margin-right: 10px
+			position: relative
+
+			&:hover:after
+				content: ''
+				background: rgba(0,0,0,0.5)
+				position: absolute
+				top: 0
+				left: 0
+				bottom: 0
+				right: 0
+
+
+		img 
+			max-height: 60px
+			width: auto
+	ins
+		text-decoration: none 
+		font-weight: bold
+		padding: 0 5px 0 10px
+
+	.quantity
+		display: inline
+
+	.attachment-shop_single
+		max-width: 100%
+		max-height: 410px
+		width: auto
+	
+	form.cart 
+		margin-bottom: 10px
+
+input[type="number"]
+	width: 43px
+	padding: 5px 0 4px 10px
+	margin-right: 10px
+
+
+/* ********** cart ************ */
+
+.cart 
+	width: 100%
+
+	.product-name a
+		font-size: 20px
+	.actions 
+		text-align: right
+
+.cart-collaterals
+	text-align: right
+	
+	.cart_totals table
+		margin: 0 0 0 auto
+
+input[name="update_cart"], .checkout-button
+	margin: 0 0 0 auto
+
+
+
 
 footer
 	padding: 20px 0 30px 0
 
 	.separator 
 		margin-bottom: 20px
+
+
+
+#vk_comments_browse, #vk_comments
+	margin: 30px 0
+
+#vk_comments_browse, #vk_comments_browse iframe, #vk_comments, #vk_comments iframe
+	width: 100% !important
+
+.woocommerce-message, .woocommerce-error, .woocommerce-info
+	// padding: 8px 15px
+	padding: 9px 19px
+	margin-bottom: 15px
+	// background: #008000 green
+	background: #000
+
+	.button 
+		display: inline-block
+		margin: 0
+
+.wc-forward
+	text-decoration: underline
+
+	&:hover 
+		// color: #ad3
+	
