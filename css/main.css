@@ -182,6 +182,7 @@ header .phone-callback a {
 .single_product .thumbnails img {
   max-height: 60px;
   width: auto;
+  max-width: 100%;
 }
 .single_product ins {
   text-decoration: none;
@@ -216,12 +217,30 @@ input[type="number"] {
 .cart .actions {
   text-align: right;
 }
+.cart .product-thumbnail {
+  padding-bottom: 10px;
+}
+.cart .product-thumbnail img {
+  max-height: 60px;
+  width: auto;
+  max-width: 100%;
+}
+.cart .product-remove {
+  font-size: 25px;
+}
+.cart .product-remove a:hover {
+  text-decoration: none;
+}
+
+.cart-subtotal td {
+  padding-left: 15px;
+}
 
 .cart-collaterals {
   text-align: right;
 }
 .cart-collaterals .cart_totals table {
-  margin: 0 0 0 auto;
+  margin: 0 0 15px auto;
 }
 
 input[name="update_cart"], .checkout-button {
@@ -247,6 +266,9 @@ footer .separator {
   padding: 9px 19px;
   margin-bottom: 15px;
   background: #000;
+}
+.woocommerce-message a, .woocommerce-error a, .woocommerce-info a {
+  text-decoration: underline;
 }
 .woocommerce-message .button, .woocommerce-error .button, .woocommerce-info .button {
   display: inline-block;
