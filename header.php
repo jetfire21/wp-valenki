@@ -33,9 +33,30 @@
 		<div class="col-md-4 phone-callback">
 			<span>+ 7 (999) 999-99-99</span>
 			<a href="#" class="button add_to_cart_button"><i class="demo-icon icon-phone">&#xe800;</i> Позвоните мне</a>
+			<?php if( !is_cart() && !is_checkout() ):?>
+		    <?php if(WC()->cart->get_cart_item_quantities()):?>
+			<div class="h-cart">
+			<i class="demo-icon icon-basket">&#xe801;</i> 
+				<?php $count = 0; foreach ( WC()->cart->get_cart_item_quantities() as $item){
+							$count = $count + $item;
+					}
+					;?>
+				<?php echo $count;?> товара (ов)
+	
+				<!-- <i class="arrow demo-icon icon-up-open-mini"></i> -->
+				<!-- <i class="arrow demo-icon icon-up-open-mini">&#xe803;</i> -->
+				<!-- <i class="arrow demo-icon icon-down-open-mini">&#xe802;</i> -->
+				<i class="arrow demo-icon icon-down-open-mini"></i>
+			</div>
+			<?php endif;?>
+			<?php endif;?>
+		
 		</div>
 	</div>
 	<div class="separator"></div>
 </header>
+<?php if ( is_active_sidebar( 'header_right' ) ) : ?>
+	<?php dynamic_sidebar( 'header_right' ); ?>
+<?php endif; ?>
 
 </div>

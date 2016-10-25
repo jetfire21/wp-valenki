@@ -67,7 +67,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	</div><!-- .summary -->
 	<div class="clearfix"></div>
-
+	<div class="sp-content">
 	<?php
 		/**
 		 * woocommerce_after_single_product_summary hook.
@@ -78,6 +78,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		 */
 		do_action( 'woocommerce_after_single_product_summary' );
 	?>
+	</div>
 
 	<meta itemprop="url" content="<?php the_permalink(); ?>" />
 

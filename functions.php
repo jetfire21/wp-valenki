@@ -118,3 +118,34 @@ function get_template_part_with_data($slug, array $data = array()){
 
      require locate_template($slug);
 }
+
+
+add_filter( 'woocommerce_checkout_fields', 'custom_edit_checkout_fields' );
+
+function custom_edit_checkout_fields( $fields ) {
+
+   unset($fields['billing']['billing_company']);
+
+   return $fields;
+}
+
+
+function true_register_wp_sidebars() {
+ 
+  register_sidebar(
+    array(
+      'id' => 'header_right', // уникальный id
+      'name' => 'Правая область в шапке сайта', // название сайдбара
+      'description' => 'Перетащите сюда виджеты, чтобы добавить их в сайдбар.', // описание
+      'before_widget' => '<div id="%1$s" class="side widget %2$s">', // по умолчанию виджеты выводятся <li>-списком
+      'after_widget' => '</div>',
+      'before_title' => '<h3 class="widget-title">', // по умолчанию заголовки виджетов в <h2>
+      'after_title' => '</h3>'
+    )
+  );
+ 
+
+}
+ 
+add_action( 'widgets_init', 'true_register_wp_sidebars' );
+
