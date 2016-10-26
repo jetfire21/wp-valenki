@@ -40,6 +40,9 @@ input
 .container
 	position: relative
 
+.added_to_cart
+	display: none !important
+
 $separator: 1px dotted #adf
 
 .separator
@@ -75,9 +78,80 @@ header
 		a 
 			margin: 8px 0 0 auto
 
-	.h-cart 
-		padding-top: 6px
-		cursor: pointer
+	.icon-basket
+		margin-right: 10px
+
+
+
+
+
+
+/* ********** widget mini-cart ************ */
+
+// div.mc-show
+// 	display: block
+
+// .widget_shopping_cart
+// 	position: absolute
+// 	z-index: 2
+// 	background: #094c79
+// 	padding: 20px 35px 20px 20px
+// 	right: 30px
+// 	display: none
+// 	margin-top: -16px
+
+// 	img 
+// 		width: auto
+// 		max-width: 50px
+// 		height: auto
+// 		max-height: 40px
+
+// 	span
+// 		// display: inline !important
+// 		font-size: 14px !important
+
+// 	>span 
+// 		display: block !important
+// 	a 
+// 		display: block
+// 		text-align: left
+
+// 	.mc-wrap-img
+// 		margin-right: 10px
+// 		width: 50px
+// 		display: inline-block !important
+// 		text-align: center
+
+// 	.remove 
+// 		display: block
+// 		position: absolute
+// 		right: 15px
+// 		margin-top: 4px
+// 		font-size: 17px
+
+// 		&:hover 
+// 			text-decoration: none
+
+// 	.button 
+// 		text-align: center
+// 		display: table
+// 		margin-left: auto
+// 		margin-right: auto
+
+// 	.quantity
+// 		text-align: right
+// 		display: block !important
+// 		margin-top: -7px
+
+// 	.total
+// 		text-align: right
+
+
+
+.h-cart 
+	cursor: pointer
+	margin-bottom: 24px
+	text-align: right
 
 	.icon-up-open-mini:before
 		content: '\e803'
@@ -85,10 +159,7 @@ header
 	.icon-down-open-mini:before
 		content: '\e802'
 
-	.icon-basket
-		margin-right: 10px
 
-/* ********** widget mini-cart ************ */
 
 div.mc-show
 	display: block
@@ -96,11 +167,15 @@ div.mc-show
 .widget_shopping_cart
 	position: absolute
 	z-index: 2
+	right: 30px
+	// display: none
+	margin-top: -60px
+
+
+.minicart-content
 	background: #094c79
 	padding: 20px 35px 20px 20px
-	right: 30px
 	display: none
-	margin-top: -16px
 
 	img 
 		width: auto
@@ -147,6 +222,10 @@ div.mc-show
 
 	.total
 		text-align: right
+
+
+
+
 
 
 .woocommerce-result-count
@@ -247,13 +326,14 @@ div.mc-show
 		display: inline
 
 	.thumbnails
-		margin: 15px 0 0 0
+		// margin: 15px 0 0 0
 
 		a 
 			display: inline-block
 			max-width: 90px
 			margin-right: 10px
 			position: relative
+			margin-top: 10px
 
 			&:hover:after
 				content: ''

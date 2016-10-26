@@ -30,9 +30,47 @@ $(document).ready(function() {
 			// // $(this).css("display","block !important");
   	// 	});
 
-$(".h-cart").click(function(){
-	$(this).find(".arrow").toggleClass("icon-down-open-mini icon-up-open-mini");
-	$(".widget_shopping_cart").toggleClass("mc-show");
-}); 
+	// $(".h-cart").click(function(){
+	// 	$(this).find(".arrow").toggleClass("icon-down-open-mini icon-up-open-mini");
+	// 	$(".widget_shopping_cart").toggleClass("mc-show");
+	// }); 
+
+
+	$(".widget_shopping_cart").on("click",".h-cart",function(){
+		$(this).find(".arrow").toggleClass("icon-down-open-mini icon-up-open-mini");
+		$(this).parent().find(".minicart-content").toggleClass("mc-show");
+	
+	}); 
+
+
+	// $(".add_to_cart_button").click(function(){
+	// 	console.log(wc_add_to_cart_params.ajax_url);
+	// 	// var ajax_url = 'http://big-wp-test/wp-admin/admin-ajax.php';
+	// 	// console.log(ajax_url);
+	// 	var data = {
+	// 		'action': 'alex_minicart',
+	// 		'umc': 1
+	// 	};
+
+	// 	$.ajax({
+	// 	url:wc_add_to_cart_params.ajax_url, // обработчик
+	// 	data:data, // данные
+	// 	type:'POST', // тип запроса
+	// 	success:function(data){
+	// 		console.log("ajax yes!");
+	// 		if( data ) { 
+	// 			console.log(data);
+
+	// 		} else {
+	// 		}
+	// 	},
+	//     error: function(errorThrown){
+ //          alert(errorThrown);
+ //      	} 
+
+	// 	 });
+
+	// });
+
 
 });

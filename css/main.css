@@ -50,6 +50,10 @@ input {
   position: relative;
 }
 
+.added_to_cart {
+  display: none !important;
+}
+
 .separator {
   border-bottom: 1px dotted #adf;
   clear: both;
@@ -82,21 +86,23 @@ header .phone-callback span {
 header .phone-callback a {
   margin: 8px 0 0 auto;
 }
-header .h-cart {
-  padding-top: 6px;
-  cursor: pointer;
-}
-header .icon-up-open-mini:before {
-  content: "";
-}
-header .icon-down-open-mini:before {
-  content: "";
-}
 header .icon-basket {
   margin-right: 10px;
 }
 
 /* ********** widget mini-cart ************ */
+.h-cart {
+  cursor: pointer;
+  margin-bottom: 24px;
+  text-align: right;
+}
+.h-cart .icon-up-open-mini:before {
+  content: "";
+}
+.h-cart .icon-down-open-mini:before {
+  content: "";
+}
+
 div.mc-show {
   display: block;
 }
@@ -104,56 +110,59 @@ div.mc-show {
 .widget_shopping_cart {
   position: absolute;
   z-index: 2;
+  right: 30px;
+  margin-top: -60px;
+}
+
+.minicart-content {
   background: #094c79;
   padding: 20px 35px 20px 20px;
-  right: 30px;
   display: none;
-  margin-top: -16px;
 }
-.widget_shopping_cart img {
+.minicart-content img {
   width: auto;
   max-width: 50px;
   height: auto;
   max-height: 40px;
 }
-.widget_shopping_cart span {
+.minicart-content span {
   font-size: 14px !important;
 }
-.widget_shopping_cart > span {
+.minicart-content > span {
   display: block !important;
 }
-.widget_shopping_cart a {
+.minicart-content a {
   display: block;
   text-align: left;
 }
-.widget_shopping_cart .mc-wrap-img {
+.minicart-content .mc-wrap-img {
   margin-right: 10px;
   width: 50px;
   display: inline-block !important;
   text-align: center;
 }
-.widget_shopping_cart .remove {
+.minicart-content .remove {
   display: block;
   position: absolute;
   right: 15px;
   margin-top: 4px;
   font-size: 17px;
 }
-.widget_shopping_cart .remove:hover {
+.minicart-content .remove:hover {
   text-decoration: none;
 }
-.widget_shopping_cart .button {
+.minicart-content .button {
   text-align: center;
   display: table;
   margin-left: auto;
   margin-right: auto;
 }
-.widget_shopping_cart .quantity {
+.minicart-content .quantity {
   text-align: right;
   display: block !important;
   margin-top: -7px;
 }
-.widget_shopping_cart .total {
+.minicart-content .total {
   text-align: right;
 }
 
@@ -247,14 +256,12 @@ div.mc-show {
 .single_product .single_add_to_cart_button {
   display: inline;
 }
-.single_product .thumbnails {
-  margin: 15px 0 0 0;
-}
 .single_product .thumbnails a {
   display: inline-block;
   max-width: 90px;
   margin-right: 10px;
   position: relative;
+  margin-top: 10px;
 }
 .single_product .thumbnails a:hover:after {
   content: "";

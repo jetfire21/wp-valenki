@@ -24,6 +24,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 
+<div class="h-cart">
+<i class="demo-icon icon-basket">&#xe801;</i> 
+	<?php
+		 $count = 0; foreach ( WC()->cart->get_cart_item_quantities() as $item){
+			$count = $count + $item;
+		}
+	?>	
+	<?php echo $count;?> товара (ов)		
+	<!-- <i class="arrow demo-icon icon-up-open-mini"></i> -->
+	<!-- <i class="arrow demo-icon icon-up-open-mini">&#xe803;</i> -->
+	<!-- <i class="arrow demo-icon icon-down-open-mini">&#xe802;</i> -->
+	<i class="arrow demo-icon icon-down-open-mini"></i>
+</div>
+
+
+<div class="minicart-content">
 <?php do_action( 'woocommerce_before_mini_cart' ); ?>
 
 <ul class="cart_list product_list_widget <?php echo $args['list_class']; ?>">
@@ -91,3 +107,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 <?php endif; ?>
 
 <?php do_action( 'woocommerce_after_mini_cart' ); ?>
+</div> <!-- end .mc-content -->

@@ -28,9 +28,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php  wc_get_template_part( 'left', 'sidebar' ); ?>
 
 	<div class="col-md-10 alex-content">
-
+<?php
+	$url = $_SERVER['REQUEST_URI'];
+	if( preg_match("/product-category/i", $url))  $cat = true;
+ ?>
 	
-
+	<?php if( !$cat ):?>
 	<div id="owl-home-slider" class="owl-carousel owl-theme">
 	 
 	  <div class="item"><img src="<?php echo get_template_directory_uri();?>/img/slide_1.jpg" alt=""></div>
@@ -38,6 +41,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	  <div class="item"><img src="<?php echo get_template_directory_uri();?>/img/slide_3.jpg" alt=""></div>
 	 
 	</div>
+	<?php endif;?>
 
 	<?php
 		/**
@@ -120,6 +124,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		$params = array(  'pagename' => 'o-nas');
 		$page_o_nas = new WP_Query($params);
 		?>
+	<?php if( !$cat ):?>
 		<?php if ($page_o_nas->have_posts()) : ?>
 		<?php while ($page_o_nas->have_posts()) : $page_o_nas->the_post(); ?>
 			<h2><?php the_title(); ?></h2>
@@ -140,20 +145,24 @@ if ( ! defined( 'ABSPATH' ) ) {
 			}
 		</script>
  -->
-		<!-- Добавление комментариев -->
-		<script type="text/javascript">
-		  VK.init({apiId: 5678013, onlyWidgets: true});
-		</script>
+ 		
+			<!-- Добавление комментариев -->
+			<script type="text/javascript">
+			  VK.init({apiId: 5678013, onlyWidgets: true});
+			</script>
 
-		<!-- Put this div tag to the place, where the Comments block will be -->
-<!-- 		
-		<div id="vk_comments"></div>
-		<script type="text/javascript">
-		VK.Widgets.Comments("vk_comments", {limit: 10, width: "300", attach: false});
-		</script>
- -->	
+			<!-- Put this div tag to the place, where the Comments block will be -->
+
+			<div id="vk_comments"></div>
+			<script type="text/javascript">
+			VK.Widgets.Comments("vk_comments", {limit: 10, width: "300", attach: false});
+			</script>
+		<?php endif;?>
 
 	</div><!-- end .alex-content -->
 
 </div><!-- end .container -->
+
+
 <?php get_footer( 'shop' ); ?>
+
