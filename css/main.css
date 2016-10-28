@@ -3,6 +3,7 @@ body {
   background: #4696CD;
   font-family: "Neucha", cursive;
   color: #fff;
+  min-width: 320px;
 }
 
 a, a:hover, a:visited, a:visited, a:focus, p, header {
@@ -93,7 +94,7 @@ header .icon-basket {
 /* ********** widget mini-cart ************ */
 .h-cart {
   cursor: pointer;
-  margin-bottom: 24px;
+  margin-bottom: 9px;
   text-align: right;
 }
 .h-cart .icon-up-open-mini:before {
@@ -111,7 +112,7 @@ div.mc-show {
   position: absolute;
   z-index: 2;
   right: 30px;
-  margin-top: -60px;
+  margin-top: -45px;
 }
 
 .minicart-content {
@@ -177,6 +178,9 @@ div.mc-show {
 .alex-content .products li {
   margin-bottom: 40px;
   text-align: center;
+}
+.alex-content .products li:nth-child(4n+1) {
+  clear: left;
 }
 .alex-content .products a {
   display: block;

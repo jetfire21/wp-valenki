@@ -4,6 +4,7 @@ body
 	// font-family: Tahoma, Verdana, sans-serif
 	font-family: 'Neucha', cursive
 	color: #fff
+	min-width: 320px
 
 a,a:hover,a:visited,a:visited, a:focus, p,header
 	color: #fff
@@ -150,7 +151,8 @@ header
 
 .h-cart 
 	cursor: pointer
-	margin-bottom: 24px
+	// margin-bottom: 24px
+	margin-bottom: 9px
 	text-align: right
 
 	.icon-up-open-mini:before
@@ -169,7 +171,8 @@ div.mc-show
 	z-index: 2
 	right: 30px
 	// display: none
-	margin-top: -60px
+	// margin-top: -60px
+	margin-top: -45px
 
 
 .minicart-content
@@ -240,6 +243,9 @@ div.mc-show
 		li 
 			margin-bottom: 40px
 			text-align: center
+
+			&:nth-child(4n+1)
+				clear: left
 
 		a 
 			display: block

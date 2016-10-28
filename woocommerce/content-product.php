@@ -31,7 +31,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 
 	<?php  //echo "=".$i; print_r($product);?>
 
-	<li <?php post_class("col-md-3"); ?>>
+	<li <?php post_class("col-md-3 col-sm-4 col-xs-6"); ?>>
 		<?php
 		/**
 		 * woocommerce_before_shop_loop_item hook.
@@ -76,7 +76,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 		do_action( 'woocommerce_after_shop_loop_item' );
 		?>
 	</li>
-	<?php if( $i%4 == 0 && !is_product() ):?>
-		<div class="clearfix"></div>
-	<?php endif;?>
+	<?php // if( $i%4 == 0 && !is_product() ):?>
+		<!-- <div class="clearfix"></div> -->
+	<?php // endif;?>
 

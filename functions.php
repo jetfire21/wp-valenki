@@ -152,17 +152,17 @@ add_action( 'widgets_init', 'true_register_wp_sidebars' );
 
 
 
-function alex_minicart(){
-  if(WC()->cart->get_cart_item_quantities()){
-     $count = 0;
-     foreach ( WC()->cart->get_cart_item_quantities() as $item){
-        $count = $count + $item;
-    }
-  }else  $count = 1;
-  echo $count;
-  print_r( WC()->cart->get_cart() );
-    die();
-}
+// function alex_minicart(){
+//   if(WC()->cart->get_cart_item_quantities()){
+//      $count = 0;
+//      foreach ( WC()->cart->get_cart_item_quantities() as $item){
+//         $count = $count + $item;
+//     }
+//   }else  $count = 1;
+//   echo $count;
+//   print_r( WC()->cart->get_cart() );
+//     die();
+// }
 
-add_action('wp_ajax_alex_minicart', 'alex_minicart');
-add_action('wp_ajax_nopriv_alex_minicart', 'alex_minicart');
+// add_action('wp_ajax_alex_minicart', 'alex_minicart');
+// add_action('wp_ajax_nopriv_alex_minicart', 'alex_minicart');

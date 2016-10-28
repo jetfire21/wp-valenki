@@ -36,9 +36,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php if( !$cat ):?>
 	<div id="owl-home-slider" class="owl-carousel owl-theme">
 	 
-	  <div class="item"><img src="<?php echo get_template_directory_uri();?>/img/slide_1.jpg" alt=""></div>
-	  <div class="item"><img src="<?php echo get_template_directory_uri();?>/img/slide_2.jpg" alt=""></div>
-	  <div class="item"><img src="<?php echo get_template_directory_uri();?>/img/slide_3.jpg" alt=""></div>
+	  <div class="item"><img  class="img-responsive" src="<?php echo get_template_directory_uri();?>/img/slide_1.jpg" alt=""></div>
+	  <div class="item"><img  class="img-responsive" src="<?php echo get_template_directory_uri();?>/img/slide_2.jpg" alt=""></div>
+	  <div class="item"><img class="img-responsive"  src="<?php echo get_template_directory_uri();?>/img/slide_3.jpg" alt=""></div>
 	 
 	</div>
 	<?php endif;?>
