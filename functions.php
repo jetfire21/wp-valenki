@@ -147,7 +147,7 @@ function true_register_wp_sidebars() {
 
 }
  
-
+-add_action( 'widgets_init', 'true_register_wp_sidebars' );
 
 /* **********for adding a new field to the options-general.php page
 добовление новой опции в существующую страницу опций (пример options-general.php)********* */

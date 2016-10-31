@@ -25,6 +25,9 @@
 	    margin-top: -42px;
 	}
 
+	.single_product .product_title{ font-size: 33px; }
+	.single_product .summary { padding-left: 0; }
+
 }
 
 @media only screen and (max-width : 767px) {

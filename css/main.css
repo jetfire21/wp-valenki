@@ -59,6 +59,13 @@ input {
   min-width: 100% !important;
 }
 
+.product_meta a {
+  text-decoration: underline;
+}
+.product_meta a:hover {
+  text-decoration: none;
+}
+
 .separator {
   border-bottom: 1px dotted #adf;
   clear: both;
@@ -264,6 +271,10 @@ div.mc-show {
 .single_product .sp-content {
   margin-top: 20px;
 }
+.single_product .products {
+  margin-left: 0;
+  margin-right: 0;
+}
 .single_product .single_add_to_cart_button {
   display: inline;
 }
@@ -300,6 +311,7 @@ div.mc-show {
   max-width: 100%;
   max-height: 410px;
   width: auto;
+  height: auto;
 }
 .single_product form.cart {
   margin-bottom: 10px;
