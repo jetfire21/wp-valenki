@@ -42,6 +42,13 @@ $(document).ready(function() {
 	
 	}); 
 
+	if( $(window).width() < 480 ){
+		 jQuery('.scroll-pane').jScrollPane({
+		 	// horizontalGutter:40
+		 });
+	}
+
+
 
 	// $(".add_to_cart_button").click(function(){
 	// 	console.log(wc_add_to_cart_params.ajax_url);

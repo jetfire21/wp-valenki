@@ -61,6 +61,16 @@
    }
 
    #owl-home-slider .owl-controls{ padding-right: 20px !important; }
+   .alex-table-responsive { 
+	    width: 100%;
+	    padding: 0 0 20px 0;
+	    overflow-x: scroll;
+	}
+   table.cart{ width: 500px; }
+   .cart .product-remove {  padding-left: 20px; }
+   .cart .actions { padding-bottom: 20px; }
+   .jspHorizontalBar { height: 8px; }
+   .jspDrag { background: #266d9e; }
 
 }
 
