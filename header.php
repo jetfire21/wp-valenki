@@ -30,11 +30,13 @@
 	</div>
 	<div class="col-md-10 h-right">
 		<div class="col-md-8  col-sm-8  reset_pad_lr">
-			<h1>Валенки ручной работы</h1>
+			<!-- <h1>Валенки ручной работы</h1> -->
+			<h1><?php echo get_option('blogname'); ?></h1>
 			<p>интернет-магазин</p>
 		</div>
 		<div class="col-md-4 col-sm-4 phone-callback reset_pad_r">
-			<span>+ 7 (999) 999-99-99</span>
+			<!-- <span>+ 7 (999) 999-99-99</span> -->
+			<span> <?php echo get_option('option_phone'); ?> </span>
 			<a href="#" class="button add_to_cart_button"><i class="demo-icon icon-phone">&#xe800;</i> Позвоните мне</a>	
 		</div>
 	</div>
@@ -45,3 +47,5 @@
 <?php endif; ?>
 
 </div>
+
+

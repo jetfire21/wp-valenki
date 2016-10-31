@@ -147,9 +147,113 @@ function true_register_wp_sidebars() {
 
 }
  
-add_action( 'widgets_init', 'true_register_wp_sidebars' );
 
 
+/* **********for adding a new field to the options-general.php page
+добовление новой опции в существующую страницу опций (пример options-general.php)********* */
+
+add_action( 'admin_init', 'alex21_register_settings' );
+
+/*  Register settings */
+function alex21_register_settings() 
+{
+    register_setting( 
+        'general', 
+        'option_address',
+        'esc_html' // <--- Customize this if there are multiple fields
+    );
+    register_setting( 
+        'general', 
+        'option_phone',
+        'esc_html' // <--- Customize this if there are multiple fields
+    );
+    // add_settings_section( 
+    //     'site-guide', 
+    //     'Name section', 
+    //     '__return_false', 
+    //     'general' 
+    // );
+
+    add_settings_field( 
+        'phone_id', 
+        'Телефон:', 
+        'alex21_add_html_for_option_phone', 
+        'general'
+        // 'site-guide' 
+    );
+
+    add_settings_field( 
+        'address_id', 
+        'Адрес:', 
+        'alex21_add_html_for_option', 
+        'general'
+        // 'site-guide' 
+    );
+
+}    
+
+/* Print settings field content */
+function alex21_add_html_for_option_phone() 
+{
+    $value = html_entity_decode (get_option( 'option_phone' ));
+    echo '<input type="text" class="regular-text" id="phone_id" name="option_phone" value="' . esc_attr( $value ) . '"/>';
+}
+
+function alex21_add_html_for_option() 
+{
+    $value = html_entity_decode (get_option( 'option_address' ));
+    echo '<textarea class="large-text code" id="address_id" name="option_address">' . esc_attr( $value ) . '</textarea>';
+}
+
+
+/* *************end  for adding a new field to the options-general.php page******* */
+
+
+/* **************** custom post type - movies ************************ */
+
+add_action('init', 'alex21_custom_type_slider');
+function alex21_custom_type_slider()
+{
+  $labels = array(
+  'name' => 'Слайдер', // Основное название типа записи
+  'singular_name' => 'Слайд', // отдельное название записи типа Book
+  'add_new' => 'Добавить новый',
+  'add_new_item' => 'Добавить новый слайд',
+  'edit_item' => 'Редактировать слайд',
+  'new_item' => 'Новый слайд',
+  'view_item' => 'Посмотреть слайд',
+  'search_items' => 'Найти слайд',
+  'not_found' =>  'Не найден',
+  'not_found_in_trash' => 'Не найден в корзине',
+  'parent_item_colon' => '',
+  'menu_name' => 'Слайдер'
+
+  );
+  $args = array(
+  'labels' => $labels,
+  'public' => true,
+  'publicly_queryable' => true,
+  'show_ui' => true,
+  'show_in_menu' => true,
+  'query_var' => true,
+  'rewrite' => true,
+  'capability_type' => 'post',
+  'has_archive' => true,
+  'hierarchical' => false,
+  'menu_position' => null,
+  'supports' => array('title','thumbnail')
+  );
+  register_post_type('homeslider',$args);
+}
+
+/* **************** custom post type - movies ************************ */
+
+
+// add_filter( 'woocommerce_get_price_html', 'wpa83367_price_html', 100, 2 );
+// function wpa83367_price_html( $price, $product ){
+//     // return 'Was:' . str_replace( '<ins>', ' Now:<ins>', $price );
+//     return str_replace( '<ins>', '<ins> <strike>P</strike> &#8381; ', $price );
+// }
 
 
 // function alex_minicart(){

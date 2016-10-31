@@ -2,7 +2,8 @@
 
 	<footer>
 		<div class="separator"></div>
-		<p>2016 © Валенки ручной работы | Чувашская республика, г.Новочебоксарск, ул.Восточная д.24</p>
+		<!-- <p>2016 © Валенки ручной работы | Чувашская республика, г.Новочебоксарск, ул.Восточная д.24</p> -->
+		<p>2016 © <?php echo get_option('blogname'); ?> |  <?php echo get_option('option_address'); ?> </p>
 	</footer>
 </div>
 
@@ -18,7 +19,9 @@
 <script type='text/javascript'> 
 	
 $(document).ready(function(){		
-    // $(document).snowfall({deviceorientation : true, round : true, minSize: 1, maxSize:8,  flakeCount : 250});
+	if( $( window ).width() > 767 ) {
+    	 $(document).snowfall({deviceorientation : true, round : true, minSize: 1, maxSize:8,  flakeCount : 250});
+	}
 });
 
  </script>

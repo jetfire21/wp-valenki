@@ -55,6 +55,10 @@ input {
   display: none !important;
 }
 
+#page_wrap {
+  min-width: 100% !important;
+}
+
 .separator {
   border-bottom: 1px dotted #adf;
   clear: both;
@@ -201,6 +205,9 @@ div.mc-show {
 }
 .alex-content .products .price del {
   padding-right: 10px;
+}
+.alex-content .products .price span {
+  font-size: 15px;
 }
 .alex-content #owl-home-slider {
   max-width: 710px;

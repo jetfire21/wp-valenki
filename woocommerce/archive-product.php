@@ -36,9 +36,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php if( !$cat ):?>
 	<div id="owl-home-slider" class="owl-carousel owl-theme">
 	 
-	  <div class="item"><img  class="img-responsive" src="<?php echo get_template_directory_uri();?>/img/slide_1.jpg" alt=""></div>
+<!-- 	  <div class="item"><img  class="img-responsive" src="<?php echo get_template_directory_uri();?>/img/slide_1.jpg" alt=""></div>
 	  <div class="item"><img  class="img-responsive" src="<?php echo get_template_directory_uri();?>/img/slide_2.jpg" alt=""></div>
-	  <div class="item"><img class="img-responsive"  src="<?php echo get_template_directory_uri();?>/img/slide_3.jpg" alt=""></div>
+	  <div class="item"><img class="img-responsive"  src="<?php echo get_template_directory_uri();?>/img/slide_3.jpg" alt=""></div> -->
+	    <?php
+		$params = array('post_type' => 'homeslider','order'=> 'ASC');
+		$wc_query = new WP_Query($params);
+		?>
+		<?php if ($wc_query->have_posts()) : ?>
+		<?php while ($wc_query->have_posts()) : $wc_query->the_post(); ?>
+		    <?php the_post_thumbnail('full', array('class'=>'img-responsive')); ?>
+		<?php endwhile; ?>
+		<?php wp_reset_postdata(); ?>
+		<?php else:  ?>
+		<p>Слайды-изображения не добалвены</p>
+		<?php endif; ?>
 	 
 	</div>
 	<?php endif;?>
@@ -155,7 +167,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<div id="vk_comments"></div>
 			<script type="text/javascript">
-			VK.Widgets.Comments("vk_comments", {limit: 10, width: "300", attach: false});
+			VK.Widgets.Comments("vk_comments", {limit: 10, width: "275", attach: false});
 			</script>
 		<?php endif;?>
 
