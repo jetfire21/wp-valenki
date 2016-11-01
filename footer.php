@@ -17,6 +17,7 @@
 <script src='<?php echo get_template_directory_uri();?>/libs/snow/js/snowfall.jquery.js'></script>
 <script src='<?php echo get_template_directory_uri();?>/libs/jScrollPane/jquery.mousewheel.js'></script>
 <script src='<?php echo get_template_directory_uri();?>/libs/jScrollPane/jquery.jscrollpane.min.js'></script>
+<script src='<?php echo get_template_directory_uri();?>/libs/magnific-popup/jquery.magnific-popup.min.js'></script>
 <script src="<?php echo get_template_directory_uri();?>/js/common.js"></script>
 <script type='text/javascript'> 
 	

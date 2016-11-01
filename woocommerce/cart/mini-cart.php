@@ -70,10 +70,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<?php if ( ! $_product->is_visible() ) : ?>
 							<?php echo str_replace( array( 'http:', 'https:' ), '', $thumbnail ) . $product_name . '&nbsp;'; ?>
 						<?php else : ?>
-							<a href="<?php echo esc_url( $product_permalink ); ?>">
+							<a class="wrap_img_title" href="<?php echo esc_url( $product_permalink ); ?>">
 								<span class="mc-wrap-img">
 								<?php echo str_replace( array( 'http:', 'https:' ), '', $thumbnail ) .
-								"</span>". $product_name . '&nbsp;'; ?>
+								"</span><span class='mc_prod_name'>". $product_name . '</span>'; ?>
+								<?php // "</span>". $product_name . '&nbsp;'; ?>
 							</a>
 						<?php endif; ?>
 						<?php echo WC()->cart->get_item_data( $cart_item ); ?>

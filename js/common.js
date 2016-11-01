@@ -42,11 +42,53 @@ $(document).ready(function() {
 	
 	}); 
 
+
 	if( $(window).width() < 480 ){
 		 jQuery('.scroll-pane').jScrollPane({
 		 	// horizontalGutter:40
 		 });
 	}
+
+	$('.popup-modal').magnificPopup({
+		type: 'inline',
+		preloader: false,
+		focus: '#username',
+		modal: true
+	});
+
+	$(document).on('click', '.popup-modal-dismiss', function (e) {
+		e.preventDefault();
+		$.magnificPopup.close();
+	});
+
+
+
+	$('#send_call_me').click(function(e){
+		e.preventDefault();
+		var form_data = $('#call_me form').serialize();
+		 $.ajax({
+			  type: 'post',
+			  url: '/wp-content/themes/valenki/mail.php',
+			  data: form_data,
+			  success: function(data){
+			  	var data = JSON.parse(data);
+				if(data.res == 'success') { 
+					alert("Ваше сообщение успешно отправлено!"); 
+					$("#call_me .woocommerce-error").remove();
+					$.magnificPopup.close();
+				}
+				if(data.res == 'error_empty') {
+					$("#call_me .woocommerce-error").remove();
+					 // $("#call_me form").append("<p class='woocommerce-error'>Вы не заполнили какое-то поле!</p>");
+					 $(".wrap_send_call_me").prepend("<p class='woocommerce-error'>Вы не заполнили какое-то поле!</p>");
+				}
+			  },
+			  error:function(){
+				alert("error");
+			}
+		});	
+	});	
+
 
 
 

@@ -29,6 +29,11 @@ input {
   color: #000;
 }
 
+input, select, textarea {
+  border: 0;
+  outline: 0;
+}
+
 .reset_pad_lr {
   padding-left: 0;
   padding-right: 0;
@@ -228,6 +233,7 @@ div.mc-show {
 .alex-content .owl-theme .owl-controls .owl-page span {
   background: #fff;
   opacity: 0.9;
+  border: 1px solid #0670b9;
 }
 .alex-content .owl-page.active span {
   opacity: 0.9;
@@ -332,6 +338,7 @@ input[type="number"] {
 }
 .cart .product-name a {
   font-size: 20px;
+  line-height: 17px;
 }
 .cart .actions {
   text-align: right;
@@ -430,6 +437,38 @@ footer .separator {
 
 .wc-forward {
   text-decoration: underline;
+}
+
+#call_me {
+  width: 250px;
+  background: #4696CD;
+  padding: 20px;
+  margin: auto;
+  position: relative;
+}
+#call_me .input-row {
+  margin-bottom: 10px;
+}
+#call_me h3 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+#call_me label {
+  width: 58px;
+  float: left;
+}
+#call_me input[type="text"] {
+  padding: 3px 10px;
+}
+#call_me .popup-modal-dismiss {
+  margin: 0;
+  text-decoration: none !important;
+  position: absolute;
+  top: 10px;
+  right: 15px;
 }
 
 /*# sourceMappingURL=main.css.map */
