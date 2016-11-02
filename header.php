@@ -2,9 +2,9 @@
 <html lang="ru">
 <head>
 	<meta charset="utf-8" />
-	<title>Профессиональные услуги по созданию сайтов. Алексей Шебалов</title>
-	<meta name="description" content="Профессиональные услуги по созданию сайтов" />
-    <meta name="keywords" content="создание сайтов, веб-разработчик, разработка сайтов, заказать сайт, landing page" />
+	<title><?php wp_title("-",true); ?></title>
+	<!-- <meta name="description" content="<?php bloginfo('description'); ?>" /> -->
+    <!-- <meta name="keywords" content="создание сайтов, веб-разработчик, разработка сайтов, заказать сайт, landing page" /> -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="icon" href="favicon.ico" type="image/x-icon" />

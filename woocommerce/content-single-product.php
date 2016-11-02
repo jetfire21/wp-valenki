@@ -20,6 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
+global $product;
 ?>
 <!-- <h1>single product</h1> -->
 <?php
@@ -46,7 +47,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 		 * @hooked woocommerce_show_product_images - 20
 		 */
 		do_action( 'woocommerce_before_single_product_summary' );
-	?>
+		
+		$razmer = wc_get_product_terms( $product->id, 'pa_razmer' );
+		// print_r($razmer);
+
+	?>	
+<!-- 	
+		<?php if( !empty($razmer)):?>
+		Размер:
+		<select name="" id="">
+			<?php foreach($razmer as $item):?>
+				<option value=""><?php echo $item->name; ?></option>
+			<?php endforeach;?>
+		</select>
+		<?php endif;?>
+ -->
 	</div>
 	<div class="col-md-5 reset_pad_r summary entry-summary">
 
