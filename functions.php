@@ -248,6 +248,28 @@ function alex21_custom_type_slider()
 
 /* **************** custom post type - movies ************************ */
 
+/* **************** замена текста по-умолчанию "выбрать опцию************************ */
+
+add_filter('woocommerce_dropdown_variation_attribute_options_args','my_variation_attribute_options_args',10,1);
+function my_variation_attribute_options_args($args){
+ $args['show_option_none'] = 'Выбрать';
+ return $args;
+}
+
+
+// add_filter( 'woocommerce_product_add_to_cart_text' , 'custom_woocommerce_product_add_to_cart_text' );
+
+//   function custom_woocommerce_product_add_to_cart_text() {
+//       global $product;    
+//       $product_type = $product->product_type;  
+//       switch ( $product_type ) {
+//       case 'variable':
+//                   return __( 'ываываыва', 'woocommerce' );
+//               break;
+//       }
+// } 
+
+
 
 // add_filter( 'woocommerce_get_price_html', 'wpa83367_price_html', 100, 2 );
 // function wpa83367_price_html( $price, $product ){

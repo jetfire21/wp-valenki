@@ -44,6 +44,7 @@
     .checkout input, .checkout select, .checkout textarea,
     .woocommerce .checkout .select2-container { width: 60% !important; }
     .checkout input[type="submit"]{ width: auto !important; }
+    .cart .product-name { width: auto; }
 
 
 }
